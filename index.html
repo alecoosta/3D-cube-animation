@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            background: black;
+            display: flex;
+            min-height: 100vh;
+        }
+        .contenedor{
+            margin: auto;
+            perspective: 700px;
+
+        }
+        .cubo{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: girar 5s infinite linear;
+        }
+
+        @keyframes girar {
+            from{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+            
+        }
+        .caras{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        #uno{
+            background: white;
+            transform: translateZ(100px);
+        }
+        #dos{
+            background: orange;
+            transform: translateX(100px) rotateY(90deg);
+        }
+        #tres{
+            background: rgb(57, 228, 228);
+            transform: translateZ(-100px);
+        }
+        #cuatro{
+            background: blue;
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+        #cinco{
+            background: green;
+            transform: translateY(-100px) rotateX(90deg);
+        }
+        #seis{
+            background: red;
+            transform: translateY(100px) rotateX(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="cubo">
+            <div class="caras" id="uno"></div>
+            <div class="caras" id="dos"></div>
+            <div class="caras" id="tres"></div>
+            <div class="caras" id="cuatro"></div>
+            <div class="caras" id="cinco"></div>
+            <div class="caras" id="seis"></div>
+        </div>
+    </div>
+</body>
+</html>
